@@ -1,6 +1,6 @@
 
 public interface IWalkable
 {
-    public void SetStartWalkPoint();
+    public void StartWalk();
     public void Walk();
 }

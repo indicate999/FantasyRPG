@@ -10,14 +10,18 @@ public class MobCreator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject mobObject = Instantiate(SpyPrefab);
-        //GameObject mobObject = Instantiate(GolemPrefab);
+        //GameObject mobObject = Instantiate(SpyPrefab);
+        GameObject mobObject = Instantiate(GolemPrefab);
 
-        MobBehaviorController mobController = mobObject.AddComponent<MobBehaviorController>();
+        //MobAnimatorController mobAnimator = mobObject.AddComponent<MobAnimatorController>();
+
+        //mobAnimator.SetWalkAnimation();
+
+        MobController mobController = mobObject.AddComponent<MobController>();
 
         //mobController.Init(new StandStillWalkBehavior(mobObject.transform, transform.position, 270f));
         mobController.Init(new StraightPatrolWalkBehavior
-            (mobObject.GetComponent<Rigidbody>(), mobObject.transform, transform.position, 270f, 25f, 5f, 2f));
+            (mobObject.GetComponent<MobAnimatorController>(), mobObject.GetComponent<Rigidbody>(), mobObject.transform, transform.position, 270f, 25f, 5f, 1f));
 
 
     }

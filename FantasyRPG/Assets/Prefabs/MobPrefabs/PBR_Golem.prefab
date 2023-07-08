@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 7223202022001027284}
   - component: {fileID: 7448824791582584811}
   - component: {fileID: 7329960458413763454}
+  - component: {fileID: 5189373722244104905}
   m_Layer: 0
   m_Name: PBR_Golem
   m_TagString: Untagged
@@ -227,7 +228,7 @@ Transform:
   - {fileID: 615337160250722506}
   - {fileID: 4423592195128664986}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 167.5, z: 0}
 --- !u!95 &7223202022001027284
 Animator:
@@ -240,7 +241,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 8b2d11d64877f0b4cad5d45ec7d53473, type: 3}
   m_Controller: {fileID: 9100000, guid: 64e2ef14a02f69a4b94edbee54ca296a, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -300,6 +301,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &5189373722244104905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3847351215647580542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd43037d7223c549b62397953d5eb9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 7223202022001027284}
 --- !u!1 &3990123994222375054
 GameObject:
   m_ObjectHideFlags: 0

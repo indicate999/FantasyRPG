@@ -887,11 +887,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5598849084197132546}
-  - component: {fileID: 7191953146029067584}
   - component: {fileID: 5787210601573078548}
   - component: {fileID: 2452659465161769679}
   - component: {fileID: 505442596616955720}
   - component: {fileID: 7881103336511389362}
+  - component: {fileID: -247619997295680118}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Untagged
@@ -913,29 +913,8 @@ Transform:
   m_Children:
   - {fileID: 6012954302795965863}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -209.247, z: 0}
---- !u!95 &7191953146029067584
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2604646897186084258}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 345f465d44ebd3743b4dfaf54022a9fe, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!136 &5787210601573078548
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -958,7 +937,7 @@ CapsuleCollider:
   m_Radius: 0.22863865
   m_Height: 2.3639603
   m_Direction: 2
-  m_Center: {x: -1.584945, y: 0.16, z: -0.29970932}
+  m_Center: {x: -1.584945, y: 0.16, z: 0.3997093}
 --- !u!136 &2452659465161769679
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -981,7 +960,7 @@ CapsuleCollider:
   m_Radius: 0.22863865
   m_Height: 2.3639603
   m_Direction: 2
-  m_Center: {x: 1.584945, y: 0.16, z: -0.29970932}
+  m_Center: {x: 1.584945, y: 0.16, z: 0.3997093}
 --- !u!136 &505442596616955720
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1032,6 +1011,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &-247619997295680118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2604646897186084258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd43037d7223c549b62397953d5eb9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 4892512659631277116}
 --- !u!1 &2657281675830064099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,6 +1465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6012954302795965863}
+  - component: {fileID: 4892512659631277116}
   m_Layer: 0
   m_Name: Black Widow
   m_TagString: Untagged
@@ -1503,6 +1496,27 @@ Transform:
   m_Father: {fileID: 5598849084197132546}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!95 &4892512659631277116
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3382450007562474005}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 345f465d44ebd3743b4dfaf54022a9fe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3398860943759191207
 GameObject:
   m_ObjectHideFlags: 0

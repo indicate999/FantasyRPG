@@ -15,7 +15,7 @@ public class StandStillWalkBehavior : IWalkable
         _YRotationAngle = YRotationAngle;
     }
 
-    public void SetStartWalkPoint()
+    public void StartWalk()
     {
         _transform.position = _position;
         _transform.eulerAngles = new Vector3(0, _YRotationAngle, 0);
