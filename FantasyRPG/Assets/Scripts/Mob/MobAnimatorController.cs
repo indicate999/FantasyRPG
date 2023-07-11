@@ -15,12 +15,15 @@ public class MobAnimatorController : MonoBehaviour
     public void SetIdleAnimation()
     {
         _animator.SetInteger(_intName, 0);
-        Debug.Log(_animator.GetInteger(_intName));
     }
 
     public void SetWalkAnimation()
     {
         _animator.SetInteger(_intName, 1);
-        Debug.Log(_animator.GetInteger(_intName));
+    }
+
+    public void SetAttackAnimation()
+    {
+        _animator.SetInteger(_intName, 2);
     }
 }

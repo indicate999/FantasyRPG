@@ -9,7 +9,7 @@ public class StraightPatrolWalkBehavior : IWalkable
     private Transform _transform;
     private Vector3 _position;
     private float _YRotationAngle;
-    private float _speed;
+    private float _moveSpeed;
     private float _patrolDistance;
     private float _rotationDuration;
 
@@ -21,7 +21,7 @@ public class StraightPatrolWalkBehavior : IWalkable
     private Vector2 _targetPoint;
     private float _elapsedRotationTime = 0f;
 
-    public StraightPatrolWalkBehavior(MobAnimatorController animatorController, Rigidbody rigidbody, Transform transform, Vector3 position, float YRotationAngle, float patrolDistance, float speed, float rotationDuration)
+    public StraightPatrolWalkBehavior(MobAnimatorController animatorController, Rigidbody rigidbody, Transform transform, Vector3 position, float YRotationAngle, float patrolDistance, float moveSpeed, float rotationDuration)
     {
         _animatorController = animatorController;
         _rigidbody = rigidbody;
@@ -29,7 +29,7 @@ public class StraightPatrolWalkBehavior : IWalkable
         _position = position;
         _YRotationAngle = YRotationAngle;
         _patrolDistance = patrolDistance;
-        _speed = speed;
+        _moveSpeed = moveSpeed;
         _rotationDuration = rotationDuration;
 
 
@@ -77,7 +77,7 @@ public class StraightPatrolWalkBehavior : IWalkable
 
             _transform.rotation = _transform.rotation * rotation;
 
-            _rigidbody.MovePosition(_transform.position + (_transform.forward * _speed * Time.fixedDeltaTime));
+            _rigidbody.MovePosition(_transform.position + (_transform.forward * _moveSpeed * Time.fixedDeltaTime));
         }
         else
         {

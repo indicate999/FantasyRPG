@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class MobController : MonoBehaviour
 {
-    private IWalkable _walkBehavior;
+    //private IWalkable _walkBehavior;
     private MobStateMachine _MSM;
-    private WalkingState _walkingState;
+    //private WalkingState _walkingState;
 
-    public void Init(IWalkable walkBehavior) 
+    public void Init(MobStateMachine MSM) 
     {
-        _walkBehavior = walkBehavior;
-        _MSM = new MobStateMachine();
-        _walkingState = new WalkingState(_walkBehavior);
-        _MSM.Initialize(_walkingState);
+        //_walkBehavior = walkBehavior;
+        _MSM = MSM;
+        //_walkingState = new WalkingState(_walkBehavior);
+        //_MSM.Initialize(_walkingState);
 
     }
 
@@ -38,5 +38,11 @@ public class MobController : MonoBehaviour
         //_walkBehavior.Walk();
         //rigidbody.AddForce(rigidbody.transform.forward * moveSpeed);
         //rigidbody.MovePosition(transform.position + (transform.forward * moveSpeed * Time.fixedDeltaTime));
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, 8);
     }
 }

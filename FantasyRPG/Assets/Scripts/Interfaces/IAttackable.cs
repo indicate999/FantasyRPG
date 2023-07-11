@@ -1,4 +1,10 @@
-interface IAttackable
+public interface IAttackable
 {
 
+    public void StartMove();
+    public void Move();
+    public void StartAttack();
+    public void Attack();
+
+    public bool CanStartAttack(float startAttackDistance);
 }
