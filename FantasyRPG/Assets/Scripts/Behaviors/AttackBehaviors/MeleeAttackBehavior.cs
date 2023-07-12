@@ -47,7 +47,7 @@ public class MeleeAttackBehavior : IAttackable
 
     }
 
-    public bool CanStartAttack(float startAttackDistance)
+    public bool CanAttack(float startAttackDistance)
     {
         var distance = Vector3.Distance(_playerTransform.position, _mobTransform.position);
 

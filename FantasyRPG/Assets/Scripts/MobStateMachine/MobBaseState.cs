@@ -1,5 +1,5 @@
 
-public abstract class MobBaseState
+public class MobBaseState
 {
     protected readonly IMobStateSwitcher _stateSwitcher;
 

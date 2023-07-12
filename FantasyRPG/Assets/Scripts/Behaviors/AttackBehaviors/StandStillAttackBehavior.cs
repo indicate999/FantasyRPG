@@ -41,7 +41,7 @@ public class StandStillAttackBehavior : IAttackable
 
     }
 
-    public bool CanStartAttack(float startAttackDistance)
+    public bool CanAttack(float startAttackDistance)
     {
         return false;
     }

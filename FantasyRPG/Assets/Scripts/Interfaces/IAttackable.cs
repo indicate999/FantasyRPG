@@ -6,5 +6,5 @@ public interface IAttackable
     public void StartAttack();
     public void Attack();
 
-    public bool CanStartAttack(float startAttackDistance);
+    public bool CanAttack(float startAttackDistance);
 }
