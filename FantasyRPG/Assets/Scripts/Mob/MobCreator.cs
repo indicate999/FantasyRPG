@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MobCreator : MonoBehaviour
 {
-    [SerializeField] Transform PlayerTransform;
-    [SerializeField] GameObject SpyPrefab;
-    [SerializeField] GameObject GolemPrefab;
+    [SerializeField] private Transform PlayerTransform;
+    [SerializeField] private GameObject SpyPrefab;
+    [SerializeField] private GameObject GolemPrefab;
 
     // Start is called before the first frame update
     void Start()

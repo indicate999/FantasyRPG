@@ -5,11 +5,11 @@ using UnityEngine;
 public class MeleeAttackBehavior : IAttackable
 {
     private MobAnimatorController _animatorController;
-    Rigidbody _rigidbody;
-    Transform _playerTransform;
-    Transform _mobTransform;
-    float _moveSpeed;
-    float _rotationSpeed;
+    private Rigidbody _rigidbody;
+    private Transform _playerTransform;
+    private Transform _mobTransform;
+    private float _moveSpeed;
+    private float _rotationSpeed;
 
     public MeleeAttackBehavior(MobAnimatorController animatorController, Rigidbody rigidbody, Transform playerTransform, Transform mobTransform, float moveSpeed, float rotationSpeed)
     {
