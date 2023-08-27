@@ -8,11 +8,10 @@ public class MobCreator : MonoBehaviour
     [SerializeField] private GameObject SpyPrefab;
     [SerializeField] private GameObject GolemPrefab;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        GameObject mobObject = Instantiate(SpyPrefab);
-        //GameObject mobObject = Instantiate(GolemPrefab);
+        //GameObject mobObject = Instantiate(SpyPrefab);
+        GameObject mobObject = Instantiate(GolemPrefab);
 
         //MobAnimatorController mobAnimator = mobObject.AddComponent<MobAnimatorController>();
 
@@ -23,6 +22,7 @@ public class MobCreator : MonoBehaviour
         Rigidbody mobRigidbody = mobObject.GetComponent<Rigidbody>();
 
         //mobController.Init(new StandStillWalkBehavior(mobObject.transform, transform.position, 270f));
+       //var walkBehavior = new StandStillWalkBehavior(mobObject.transform, transform.position, 270f);
         var walkBehavior = new StraightPatrolWalkBehavior
             (mobAnimator, mobRigidbody, mobObject.transform, transform.position, 270f, 25f, 5f, 1f);
 
@@ -35,9 +35,4 @@ public class MobCreator : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -5,15 +5,8 @@ using UnityEngine.InputSystem;
 
 public class CameraMovement : MonoBehaviour
 {
-    [SerializeField] private Transform target; 
-    [SerializeField] private float zoomScale = 1.5f;
-    [SerializeField] private float offsetY = 1f;
-    [SerializeField] private float startDistance = 6.0f;
-    [SerializeField] private float minDistance = 3.0f;
-    [SerializeField] private float maxDistance = 17.0f;
-    [SerializeField] private float sensitivity = 2.0f; 
-    [SerializeField] private float minYAngle = -20.0f;
-    [SerializeField] private float maxYAngle = 80.0f; 
+    [SerializeField] private Transform target;
+    [SerializeField] private CameraData cameraData; 
 
     private float _distance;
     private float currentX = 0.0f; 
@@ -21,17 +14,17 @@ public class CameraMovement : MonoBehaviour
 
     private void Start()
     {
-        _distance = startDistance;
+        _distance = cameraData.StartDistance;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         AttachToTarget();
     }
 
     private void AttachToTarget()
     {
-        transform.position = target.position + new Vector3(0, offsetY, 0) - transform.forward * _distance;
+        transform.position = target.position + new Vector3(0, cameraData.OffsetY, 0) - transform.forward * _distance;
     }
 
     private void OnRotate(InputValue value)
@@ -39,13 +32,13 @@ public class CameraMovement : MonoBehaviour
         
         Vector2 rotationValue = value.Get<Vector2>();
 
-        float mouseX = rotationValue.x * sensitivity;
-        float mouseY = rotationValue.y * sensitivity;
+        float mouseX = rotationValue.x * cameraData.Sensitivity;
+        float mouseY = rotationValue.y * cameraData.Sensitivity;
 
         currentX += mouseX;
         currentY -= mouseY;
 
-        currentY = Mathf.Clamp(currentY, minYAngle, maxYAngle);
+        currentY = Mathf.Clamp(currentY, cameraData.MinYAngle, cameraData.MaxYAngle);
 
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
         transform.rotation = rotation;
@@ -62,9 +55,9 @@ public class CameraMovement : MonoBehaviour
     {
         float zoomValue = value.Get<float>();
         
-        _distance = _distance + (zoomValue * zoomScale);
+        _distance = _distance + (zoomValue * cameraData.ZoomScale);
 
-        _distance = Mathf.Clamp(_distance, minDistance, maxDistance);
+        _distance = Mathf.Clamp(_distance, cameraData.MinDistance, cameraData.MaxDistance);
     }
 
 }

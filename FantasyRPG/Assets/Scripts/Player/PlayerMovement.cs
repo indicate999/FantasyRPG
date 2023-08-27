@@ -20,16 +20,9 @@ public class PlayerMovement : MonoBehaviour
     private float _velocity;
     private bool _isGrounded;
 
-    private void Awake()
-    {
-
-    }
-
     private void Update()
     {
         _isGrounded = isOnTheGround();
-
-        //transform.forward = new Vector3(cameraTransform.transform.forward.x, transform.forward.y, cameraTransform.transform.forward.z);        
 
         Move();
         DoGravity();

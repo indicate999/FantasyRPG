@@ -8,19 +8,6 @@ public class MobStateMachine : IMobStateSwitcher
     private MobBaseState _currentState;
     public MobBaseState CurrentState { get { return _currentState; } }
 
-    /*public void Initialize(MobBaseState startState)
-    {
-        _currentState = startState;
-        _currentState.Enter();
-    }
-
-    public void ChangeState(MobBaseState newState)
-    {
-        _currentState.Exit();
-        _currentState = newState;
-        _currentState.Enter();
-    }*/
-
     public MobStateMachine(IWalkable walkBehavior, IAttackable attackBehavior, Transform playerTransform, Transform mobTransform, float startMoveToTargetDistance, float attackDistance)
     {
         _allStates = new List<MobBaseState>()

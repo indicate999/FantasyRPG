@@ -2066,14 +2066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4957605393920658499}
-  zoomScale: 1.5
-  offsetY: 1.5
-  startDistance: 6
-  minDistance: 3
-  maxDistance: 17
-  sensitivity: 1
-  minYAngle: 0
-  maxYAngle: 120
+  cameraData: {fileID: 11400000, guid: 53e04e9c30ec38843b479894203b9360, type: 2}
 --- !u!114 &1589245849
 MonoBehaviour:
   m_ObjectHideFlags: 0
