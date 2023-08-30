@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class MovingState : MobBaseState
 {
-    private IAttackable _attackBehavior;
+    private IMoveable _moveBehavior;
     private float _attackDistance;
 
-    public MovingState(IAttackable attackBehavior, IMobStateSwitcher stateSwitcher, float attackDistance) : base(stateSwitcher)
+    public MovingState(IMoveable moveBehavior, IMobStateSwitcher stateSwitcher, float attackDistance) : base(stateSwitcher)
     {
-        _attackBehavior = attackBehavior;
+        _moveBehavior = moveBehavior;
         _attackDistance = attackDistance;
     }
 
     public override void Enter()
     {
-        _attackBehavior.StartMove();
+        _moveBehavior.StartMove();
     }
 
     public override void Update()
     {
-        _attackBehavior.Move();
+        _moveBehavior.Move();
 
-        if (_attackBehavior.CanAttack(_attackDistance))
+        if (_moveBehavior.CanAttack(_attackDistance))
             _stateSwitcher.SwitchState<AttackingState>();
     }
 }

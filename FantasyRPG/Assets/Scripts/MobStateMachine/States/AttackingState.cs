@@ -5,11 +5,13 @@ using UnityEngine;
 public class AttackingState : MobBaseState
 {
     private IAttackable _attackBehavior;
+    private IMoveable _moveBehavior;
     private float _attackDistance;
 
-    public AttackingState(IAttackable attackBehavior, IMobStateSwitcher stateSwitcher, float attackDistance) : base(stateSwitcher)
+    public AttackingState(IAttackable attackBehavior, IMoveable moveBehavior, IMobStateSwitcher stateSwitcher, float attackDistance) : base(stateSwitcher)
     {
         _attackBehavior = attackBehavior;
+        _moveBehavior = moveBehavior;
         _attackDistance = attackDistance;
     }
 
@@ -22,7 +24,7 @@ public class AttackingState : MobBaseState
     {
         _attackBehavior.Attack();
 
-        if (!_attackBehavior.CanAttack(_attackDistance))
+        if (!_moveBehavior.CanAttack(_attackDistance))
             _stateSwitcher.SwitchState<MovingState>();
     }
 }

@@ -28,9 +28,11 @@ public class MobCreator : MonoBehaviour
 
         //var attackBehavior = new StandStillAttackBehavior(mobAnimator, PlayerTransform, mobObject.transform, 5);
 
-        var attackBehavior = new MeleeAttackBehavior(mobAnimator, mobRigidbody, PlayerTransform, mobObject.transform, 5f, 5f);
+        var moveBehavior = new GoToPlayerMoveBehavior(mobAnimator, mobRigidbody, PlayerTransform, mobObject.transform, 5f, 5f);
 
-        mobController.Init(new MobStateMachine(walkBehavior, attackBehavior, PlayerTransform, mobObject.transform, 8, 3));
+        var attackBehavior = new MeleeAttackBehavior(mobAnimator);
+
+        mobController.Init(new MobStateMachine(walkBehavior, moveBehavior, attackBehavior, PlayerTransform, mobObject.transform, 8, 3));
 
 
     }
